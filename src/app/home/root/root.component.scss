@@ -1,79 +1,74 @@
-// 🌈 Premium gradient hero
-.hero {
-  background: linear-gradient(to right, #007bff, #00c6ff);
-  min-height: 100vh;
-  background-image: url('/assets/hero-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  position: relative;
+/* NAVBAR */
+.navbar {
+  background: rgba(0, 0, 0, 0.8);
+  transition: background 0.3s ease;
 
-  &::before {
-    content: '';
+  .nav-link {
+    color: #ddd;
+    margin-left: 1rem;
+    transition: color 0.3s;
+    &:hover {
+      color: #00bfff;
+    }
+  }
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  position: relative;
+  background: url('/assets/hero-bike.jpg') center/cover no-repeat;
+  .overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.45);
-  }
-
-  .container {
-    position: relative;
-    z-index: 2;
-  }
-
-  h1, p, button {
-    animation: fadeUp 1.5s ease forwards;
+    background: rgba(0, 0, 0, 0.55);
   }
 }
 
-// 🌟 Section title
-.section-title {
-  position: relative;
-  display: inline-block;
-
-  &::after {
-    content: '';
-    width: 60px;
-    height: 3px;
-    background-color: var(--bs-primary);
-    display: block;
-    margin: 10px auto 0;
-    border-radius: 2px;
-  }
+/* Section Title */
+.section-title::after {
+  content: '';
+  width: 60px;
+  height: 3px;
+  background: var(--bs-primary);
+  display: block;
+  margin: 8px auto 0;
+  border-radius: 2px;
 }
 
-// 🌿 Product cards
+/* Product Cards */
 .product-card {
+  border-radius: 0.75rem;
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   }
+}
 
-  img {
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
+/* Services */
+.service-box {
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: translateY(-5px);
   }
 }
 
-// 🌙 Footer
+/* CTA Section */
+.cta {
+  background: linear-gradient(to right, #007bff, #00bfff);
+}
+
+/* Footer */
 .footer {
   background: #111;
   color: #bbb;
 }
 
-// ✨ Animations
-@keyframes fadeUp {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
+/* Responsiveness */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
   }
 }
-
-.fade-in-up { animation: fadeUp 1s ease forwards; opacity: 0; }
-.fade-in-up-delay { animation: fadeUp 1.5s ease forwards; opacity: 0; }
-.fade-in-up-more { animation: fadeUp 2s ease forwards; opacity: 0; }
-.fade-in { animation: fadeUp 1.2s ease forwards; opacity: 0; }
