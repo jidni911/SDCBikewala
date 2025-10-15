@@ -7,52 +7,58 @@ import * as AOS from 'aos';
   styleUrls: ['./root.component.scss']
 })
 export class RootComponent implements OnInit {
-  // ✅ Products
   products = [
     {
+      name: 'Carbon Fiber Frame',
+      desc: 'Ultra-light performance frame for serious riders.',
+      price: '$799',
+      image: 'assets/products/frame.jpg',
+      delay: 100
+    },
+    {
       name: 'Pro Gear Set',
-      price: '$89.99',
-      image: 'assets/parts/gear.jpg',
-      desc: 'Smooth shifting and long-lasting durability for mountain riders.'
+      desc: 'Smooth shifting for all terrains.',
+      price: '$249',
+      image: 'assets/products/gears.jpg',
+      delay: 200
     },
     {
-      name: 'Hydraulic Brake System',
-      price: '$129.99',
-      image: 'assets/parts/brake.jpg',
-      desc: 'Top-tier braking performance for any terrain.'
-    },
-    {
-      name: 'Titanium Chain',
-      price: '$59.99',
-      image: 'assets/parts/chain.jpg',
-      desc: 'Lightweight and ultra-strong titanium chain.'
+      name: 'All-Terrain Tires',
+      desc: 'Durable grip with superior comfort.',
+      price: '$99',
+      image: 'assets/products/tires.jpg',
+      delay: 300
     }
   ];
 
-  // ✅ Services
   services = [
     {
-      icon: 'bi-tools',
       title: 'Full Bike Servicing',
-      desc: 'Complete inspection and fine-tuning for smoother, faster rides.'
+      desc: 'Complete maintenance to keep your bike in top shape.',
+      icon: 'bi-gear-fill',
+      delay: 100
     },
     {
+      title: 'Custom Upgrades',
+      desc: 'Tailor your ride with premium components.',
+      icon: 'bi-tools',
+      delay: 200
+    },
+    {
+      title: 'Wheel Alignment',
+      desc: 'Perfect balance for smoother rides.',
       icon: 'bi-bicycle',
-      title: 'Custom Builds',
-      desc: 'Build your dream cycle with top-tier components and expert guidance.'
-    },
-    {
-      icon: 'bi-lightning-charge',
-      title: 'Quick Fixes',
-      desc: 'Need urgent repairs? Our express service gets you back fast.'
+      delay: 300
     }
+  ];
+
+  reviews = [
+    { name: 'Rafiul Hasan', text: 'Best bike shop in town! Super friendly and expert service.', delay: 100 },
+    { name: 'Tania Rahman', text: 'Got my custom setup done perfectly. Highly recommend!', delay: 200 },
+    { name: 'Nayeem Islam', text: 'Affordable prices and quick turnaround time!', delay: 300 }
   ];
 
   ngOnInit() {
-    AOS.init({
-      duration: 1000,
-      once: true,
-      offset: 100
-    });
+    AOS.init({ duration: 1000, once: true, offset: 120 });
   }
 }
