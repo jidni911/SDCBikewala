@@ -1,0 +1,29 @@
+<div class="profile-wrapper" [class.active]="isOpen">
+    <button id="userProfileButton" (click)="toggleProfile()" [class.active]="isOpen">
+        <i class="bi bi-person-circle fs-3" *ngIf="!isOpen"></i>
+    </button>
+
+    <div class="profile-content text-center" *ngIf="isOpen">
+        <button class="btn btn-info rounded-circle" style="position: fixed; top: 2rem; right: 2rem; z-index: 3;"
+
+            (click)="toggleProfile()">
+            <i class="bi bi-x-lg"></i>
+        </button>
+
+        <div class="slider-container">
+            <div class="slider" [ngStyle]="{ 'transform': 'translateX(-' + currentSlide * 100 + '%)' }">
+                <div class="slide">
+                    <app-user-profile></app-user-profile>
+                </div>
+                <div class="slide active">
+                    <app-sign-in></app-sign-in>
+                </div>
+                <div class="slide">
+                    <app-sign-up></app-sign-up>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

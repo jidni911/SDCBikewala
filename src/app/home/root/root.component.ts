@@ -7,6 +7,7 @@ import * as AOS from 'aos';
   styleUrls: ['./root.component.scss']
 })
 export class RootComponent implements OnInit {
+  logoUrl = '/assets/logo/logo.jpg';
   products = [
     {
       name: 'Carbon Fiber Frame',

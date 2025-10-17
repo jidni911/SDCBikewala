@@ -1,0 +1,42 @@
+form {
+  border-radius: 15px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+form:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.table {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.pagination .page-link {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .form-control, .form-select {
+    font-size: 0.9rem;
+  }
+
+  table {
+    font-size: 0.85rem;
+  }
+
+  .pagination {
+    font-size: 0.85rem;
+  }
+}

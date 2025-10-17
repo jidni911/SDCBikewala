@@ -1,0 +1,135 @@
+.profile-wrapper {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    width: 3.5rem ;
+    height: 3.5rem;
+    border-radius: 50%;
+    border: 2px solid var(--bs-info);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s ease-in-out;
+    transform-origin: bottom right;
+    cursor: pointer;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+
+    &.center {
+        right: 50%;
+        transform: translateX(50%);
+        transform-origin: bottom center;
+    }
+
+    &.active {
+        bottom: 0;
+        right: 0;
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+
+        /* ✨ Glassmorphism effect */
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+
+        box-shadow: none;
+        cursor: default;
+    }
+
+}
+
+/* Button inside */
+#userProfileButton {
+    border: none;
+    background: transparent;
+    color: var(--bs-info);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease;
+
+    i {
+        font-size: 1.8rem;
+    }
+
+    &.active {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+/* Profile content (shows after expand) */
+.profile-content {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease 0.5s, transform 0.6s ease 0.5s;
+
+    h2,
+    p {
+        color: var(--bs-body-color);
+    }
+
+    button {
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    .profile-wrapper.active & {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Dark mode support */
+[data-bs-theme='dark'] .profile-wrapper.active {
+    background: rgba(10, 21, 32, 0.6);
+    backdrop-filter: blur(25px) saturate(160%);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .profile-wrapper {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider {
+  display: flex;
+  width: 300%; /* 3 slides */
+  transition: transform 0.6s ease;
+  transform: translateX(-100%);
+}
+
+.slide {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+

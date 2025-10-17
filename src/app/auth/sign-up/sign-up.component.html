@@ -1,0 +1,43 @@
+<div class="signup-wrapper d-flex align-items-center justify-content-center min-vh-100">
+  <div class="signup-card shadow-lg p-4 p-md-5 rounded-4" data-aos="zoom-in">
+    <div class="text-center mb-4">
+      <i class="bi bi-person-plus display-3 text-primary"></i>
+      <h2 class="fw-bold mt-2">Create Your Account</h2>
+      <p class="text-muted">Join <span class="fw-semibold text-primary">SDCBikewala</span> and ride with confidence.</p>
+    </div>
+
+    <form (ngSubmit)="onSubmit()" novalidate>
+      <div class="form-floating mb-3">
+        <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" ngModel required />
+        <label for="name">Full Name</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input type="email" id="email" name="email" class="form-control" placeholder="name@example.com" ngModel
+          required />
+        <label for="email">Email address</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input type="password" id="password" name="password" class="form-control" placeholder="Password" ngModel
+          required minlength="6" />
+        <label for="password">Password</label>
+      </div>
+
+      <div class="form-floating mb-4">
+        <input type="password" id="confirmPassword" name="confirmPassword" class="form-control"
+          placeholder="Confirm Password" ngModel required />
+        <label for="confirmPassword">Confirm Password</label>
+      </div>
+
+      <button class="btn btn-primary w-100 py-2 fw-bold" type="submit">Create Account</button>
+
+      <div class="text-center mt-3">
+        <p class="mb-0">
+          Already have an account?
+          <a (click)="goTo('signin')" class="text-decoration-none fw-semibold text-primary">Sign In</a>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>

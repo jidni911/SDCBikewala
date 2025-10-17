@@ -1,7 +1,7 @@
 <!-- ✅ NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm" id="homeNavBar">
     <div class="container">
-        <a class="navbar-brand fw-bold text-primary fs-3" href="#">SDCBikewala</a>
+        <a class="navbar-brand fw-bold text-primary fs-3" href="#"><img [src]="logoUrl" loading="lazy" class="img-fluid me-2" width="50" alt="" srcset="">SDCBikewala</a>
 
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,7 +10,7 @@
 
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav text-center">
-                <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#heroCarousel">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
                 <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="#community">Community</a></li>
@@ -20,151 +20,151 @@
         </div>
     </div>
 </nav>
+<div data-bs-spy="scroll" data-bs-target="#homeNavBar" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+    <!-- ✅ HERO CAROUSEL -->
+    <section class="hero-carousel position-relative">
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="hero-slide" style="background-image: url('/assets/hero-bike.jpg');">
+                        <div class="overlay"></div>
+                        <div class="container text-center text-white position-relative" data-aos="fade-up">
+                            <h1 class="display-4 fw-bold mb-3">Ride Beyond Limits</h1>
+                            <p class="lead mb-4">Premium cycle components & expert services for every rider.</p>
+                            <button class="btn btn-primary btn-lg px-5">Explore Now</button>
+                        </div>
+                    </div>
+                </div>
 
-<!-- ✅ HERO CAROUSEL -->
-<section class="hero-carousel position-relative">
-    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
-        <div class="carousel-inner">
-            <!-- Slide 1 -->
-            <div class="carousel-item active">
-                <div class="hero-slide" style="background-image: url('/assets/hero-bike.jpg');">
-                    <div class="overlay"></div>
-                    <div class="container text-center text-white position-relative" data-aos="fade-up">
-                        <h1 class="display-4 fw-bold mb-3">Ride Beyond Limits</h1>
-                        <p class="lead mb-4">Premium cycle components & expert services for every rider.</p>
-                        <button class="btn btn-primary btn-lg px-5">Explore Now</button>
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="hero-slide" style="background-image: url('/assets/hero-bike2.jpg');">
+                        <div class="overlay"></div>
+                        <div class="container text-center text-white position-relative" data-aos="fade-up">
+                            <h1 class="display-4 fw-bold mb-3">Your Ride, Your Style</h1>
+                            <p class="lead mb-4">Custom builds and accessories that match your journey.</p>
+                            <button class="btn btn-primary btn-lg px-5">Shop Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+                    <div class="hero-slide" style="background-image: url('/assets/hero-bike3.jpg');">
+                        <div class="overlay"></div>
+                        <div class="container text-center text-white position-relative" data-aos="fade-up">
+                            <h1 class="display-4 fw-bold mb-3">We Keep You Moving</h1>
+                            <p class="lead mb-4">Reliable servicing and support for every cyclist.</p>
+                            <button class="btn btn-primary btn-lg px-5">Book Service</button>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Slide 2 -->
-            <div class="carousel-item">
-                <div class="hero-slide" style="background-image: url('/assets/hero-bike2.jpg');">
-                    <div class="overlay"></div>
-                    <div class="container text-center text-white position-relative" data-aos="fade-up">
-                        <h1 class="display-4 fw-bold mb-3">Your Ride, Your Style</h1>
-                        <p class="lead mb-4">Custom builds and accessories that match your journey.</p>
-                        <button class="btn btn-primary btn-lg px-5">Shop Now</button>
-                    </div>
-                </div>
-            </div>
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-info rounded-circle m-2"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-info rounded-circle m-2"></span>
+            </button>
+        </div>
+    </section>
 
-            <!-- Slide 3 -->
-            <div class="carousel-item">
-                <div class="hero-slide" style="background-image: url('/assets/hero-bike3.jpg');">
-                    <div class="overlay"></div>
-                    <div class="container text-center text-white position-relative" data-aos="fade-up">
-                        <h1 class="display-4 fw-bold mb-3">We Keep You Moving</h1>
-                        <p class="lead mb-4">Reliable servicing and support for every cyclist.</p>
-                        <button class="btn btn-primary btn-lg px-5">Book Service</button>
+
+    <!-- ✅ PRODUCTS -->
+    <section id="products" class="py-5">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-5 section-title" data-aos="fade-up">Top Components</h2>
+            <div class="row g-4">
+                <div class="col-12 col-sm-6 col-lg-4" *ngFor="let p of products" data-aos="zoom-in"
+                    [attr.data-aos-delay]="p.delay">
+                    <div class="card border-0 shadow-sm h-100 product-card">
+                        <img [src]="p.image" loading="lazy" class="card-img-top" [alt]="p.name" />
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">{{ p.name }}</h5>
+                            <p class="text-muted small">{{ p.desc }}</p>
+                            <h6 class="fw-bold text-primary">{{ p.price }}</h6>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Carousel Controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon bg-info rounded-circle m-2"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon bg-info rounded-circle m-2"></span>
-        </button>
-    </div>
-</section>
-
-
-<!-- ✅ PRODUCTS -->
-<section id="products" class="py-5">
-    <div class="container text-center">
-        <h2 class="fw-bold mb-5 section-title" data-aos="fade-up">Top Components</h2>
-        <div class="row g-4">
-            <div class="col-12 col-sm-6 col-lg-4" *ngFor="let p of products" data-aos="zoom-in"
-                [attr.data-aos-delay]="p.delay">
-                <div class="card border-0 shadow-sm h-100 product-card">
-                    <img [src]="p.image" loading="lazy" class="card-img-top" [alt]="p.name" />
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">{{ p.name }}</h5>
-                        <p class="text-muted small">{{ p.desc }}</p>
-                        <h6 class="fw-bold text-primary">{{ p.price }}</h6>
+    <!-- ✅ SERVICES -->
+    <section id="services" class="bg-light py-5 text-center">
+        <div class="container">
+            <h2 class="fw-bold mb-5 section-title" data-aos="fade-up">Our Services</h2>
+            <div class="row g-4">
+                <div class="col-12 col-md-6 col-lg-4" *ngFor="let s of services" data-aos="fade-up"
+                    [attr.data-aos-delay]="s.delay">
+                    <div class="p-4 bg-white shadow-sm rounded service-box h-100">
+                        <i class="bi {{ s.icon }} display-5 text-primary mb-3"></i>
+                        <h5 class="fw-bold mb-2">{{ s.title }}</h5>
+                        <p class="text-muted small">{{ s.desc }}</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ✅ SERVICES -->
-<section id="services" class="bg-light py-5 text-center">
-    <div class="container">
-        <h2 class="fw-bold mb-5 section-title" data-aos="fade-up">Our Services</h2>
-        <div class="row g-4">
-            <div class="col-12 col-md-6 col-lg-4" *ngFor="let s of services" data-aos="fade-up"
-                [attr.data-aos-delay]="s.delay">
-                <div class="p-4 bg-white shadow-sm rounded service-box h-100">
-                    <i class="bi {{ s.icon }} display-5 text-primary mb-3"></i>
-                    <h5 class="fw-bold mb-2">{{ s.title }}</h5>
-                    <p class="text-muted small">{{ s.desc }}</p>
+    <!-- ✅ COMMUNITY -->
+    <section id="community" class="py-5 text-center">
+        <div class="container">
+            <h2 class="fw-bold mb-3 section-title" data-aos="fade-up">Join Our Community</h2>
+            <p class="lead mb-4 text-muted" data-aos="fade-up" data-aos-delay="100">
+                Connect with riders, share your journey, and get exclusive offers.
+            </p>
+            <button class="btn btn-primary btn-lg px-5" data-aos="fade-up" data-aos-delay="200">
+                Join Now
+            </button>
+        </div>
+    </section>
+
+    <section id="reviews" class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-5 section-title" data-aos="fade-up">What Our Riders Say</h2>
+
+            <div id="reviewCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item" *ngFor="let r of reviews; let i = index" [class.active]="i === 0">
+                        <div class="review-box p-4 mx-auto shadow-sm bg-white rounded" style="max-width: 700px;"
+                            data-aos="zoom-in">
+                            <p class="fst-italic text-muted mb-3">“{{ r.text }}”</p>
+                            <h6 class="fw-bold text-primary">{{ r.name }}</h6>
+                        </div>
+                    </div>
                 </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#reviewCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#reviewCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ✅ COMMUNITY -->
-<section id="community" class="py-5 text-center">
-    <div class="container">
-        <h2 class="fw-bold mb-3 section-title" data-aos="fade-up">Join Our Community</h2>
-        <p class="lead mb-4 text-muted" data-aos="fade-up" data-aos-delay="100">
-            Connect with riders, share your journey, and get exclusive offers.
+
+    <!-- ✅ CONTACT -->
+    <section id="contact" class="cta py-5 text-center text-white position-relative">
+        <div class="overlay-dark"></div>
+        <div class="container position-relative" data-aos="zoom-in">
+            <h2 class="fw-bold mb-3">Need a Tune-up?</h2>
+            <p class="lead mb-4">Book your cycle service today and ride smoother tomorrow!</p>
+            <a class="btn btn-light btn-lg px-5 py-2" routerLink="/booking">Book Now</a>
+        </div>
+    </section>
+
+    <!-- ✅ FOOTER -->
+    <footer class="footer py-4 text-center text-white bg-dark">
+        <p class="mb-0">
+            &copy; 2025 <span class="text-primary fw-bold">SDCBikewala</span> | Ride Strong. Ride Smart.
         </p>
-        <button class="btn btn-primary btn-lg px-5" data-aos="fade-up" data-aos-delay="200">
-            Join Now
-        </button>
-    </div>
-</section>
-
-<section id="reviews" class="py-5 bg-light">
-  <div class="container text-center">
-    <h2 class="fw-bold mb-5 section-title" data-aos="fade-up">What Our Riders Say</h2>
-
-    <div id="reviewCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div
-          class="carousel-item"
-          *ngFor="let r of reviews; let i = index"
-          [class.active]="i === 0"
-        >
-          <div class="review-box p-4 mx-auto shadow-sm bg-white rounded" style="max-width: 700px;" data-aos="zoom-in">
-            <p class="fst-italic text-muted mb-3">“{{ r.text }}”</p>
-            <h6 class="fw-bold text-primary">{{ r.name }}</h6>
-          </div>
-        </div>
-      </div>
-
-      <button class="carousel-control-prev" type="button" data-bs-target="#reviewCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#reviewCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </button>
-    </div>
-  </div>
-</section>
-    
-
-<!-- ✅ CONTACT -->
-<section id="contact" class="cta py-5 text-center text-white position-relative">
-    <div class="overlay-dark"></div>
-    <div class="container position-relative" data-aos="zoom-in">
-        <h2 class="fw-bold mb-3">Need a Tune-up?</h2>
-        <p class="lead mb-4">Book your cycle service today and ride smoother tomorrow!</p>
-        <button class="btn btn-light btn-lg px-5 py-2">Book Now</button>
-    </div>
-</section>
-
-<!-- ✅ FOOTER -->
-<footer class="footer py-4 text-center text-white bg-dark">
-    <p class="mb-0">
-        &copy; 2025 <span class="text-primary fw-bold">SDCBikewala</span> | Ride Strong. Ride Smart.
-    </p>
-</footer>
+    </footer>
+</div>

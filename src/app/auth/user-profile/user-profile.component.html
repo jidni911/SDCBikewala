@@ -1,0 +1,38 @@
+<div class="profile-container container py-5">
+  <div class="card profile-card mx-auto shadow-lg border-0">
+    <div class="card-body text-center">
+      <!-- Avatar -->
+      <div class="avatar-wrapper mx-auto mb-4">
+        <img src="assets/images/default-avatar.png" alt="User Avatar" class="avatar-img">
+        <button class="btn btn-outline-light btn-sm edit-btn">
+          <i class="bi bi-pencil"></i>
+        </button>
+      </div>
+
+      <!-- User Info -->
+      <h3 class="fw-bold mb-0">John Doe</h3>
+      <p class="text-muted mb-3">@johndoe</p>
+
+      <div class="d-flex justify-content-center mb-4">
+        <div class="px-3">
+          <h6 class="fw-bold mb-0">12</h6>
+          <small class="text-muted">Bookings</small>
+        </div>
+        <div class="px-3">
+          <h6 class="fw-bold mb-0">5</h6>
+          <small class="text-muted">Reviews</small>
+        </div>
+        <div class="px-3">
+          <h6 class="fw-bold mb-0">3</h6>
+          <small class="text-muted">Wishlist</small>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="d-flex flex-column gap-3">
+        <button class="btn btn-primary w-100">Manage Account</button>
+        <button class="btn btn-outline-danger w-100" (click)="goTo('signin')">Log Out</button>
+      </div>
+    </div>
+  </div>
+</div>

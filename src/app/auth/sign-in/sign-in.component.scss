@@ -1,0 +1,50 @@
+.signin-wrapper {
+  background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%);
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.signin-card {
+  max-width: 420px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: fadeIn 0.8s ease;
+}
+
+[data-bs-theme='dark'] .signin-card {
+  background: rgba(20, 25, 40, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+button.btn-primary {
+  background: linear-gradient(135deg, var(--bs-primary), #00bcd4);
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 576px) {
+  .signin-card {
+    padding: 2rem 1.5rem;
+  }
+}
